@@ -1,0 +1,18 @@
+<h2>Buscar cursos</h2>
+<form [formGroup]="form">
+    <mat-form-field appearance="outline">
+        <mat-label>Título</mat-label>
+        <input formControlName="titulo" matInput/>
+    </mat-form-field>
+    <mat-form-field appearance="outline">
+        <mat-label>Ciclo</mat-label>
+        <mat-select formControlName="cicloId">
+            <mat-option *ngFor="let ciclo of ciclos" [value]="ciclo.id">{{ciclo.nombre}}</mat-option>
+        </mat-select>
+    </mat-form-field>    
+    <div>
+        <button mat-flat-button (click)="limpiar()" color="warn"> Limpiar</button>
+    </div>   
+   
+</form>    
+
